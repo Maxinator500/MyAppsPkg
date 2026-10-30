@@ -1,0 +1,26 @@
+[Defines]
+  INF_VERSION                     = 0x00010005
+  BASE_NAME                       = UEFIDirtyDumper
+  FILE_GUID                       = 4C70DA7C-74AB-4756-BE0A-6B6B581E9B36
+  MODULE_TYPE                     = UEFI_APPLICATION
+  ENTRY_POINT                     = Main
+
+[Sources]
+  App.cpp
+  App.hpp
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  CryptoPkg/CryptoPkg.dec
+
+[LibraryClasses]
+  UefiLib
+  UefiApplicationEntryPoint
+  UefiBootServicesTableLib
+  PrintLib
+  BaseCryptLib
+
+[Protocols]
+  gEfiSmbiosProtocolGuid                        ## CONSUMES
+  gEfiLoadedImageProtocolGuid                   ## CONSUMES

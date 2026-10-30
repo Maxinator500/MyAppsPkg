@@ -1,0 +1,26 @@
+[Defines]
+    INF_VERSION                     = 0x00010005
+    BASE_NAME                       = ResetAppSwitchable
+    FILE_GUID                       = C3AA5559-8816-4831-B73B-1239856C881E
+    MODULE_TYPE                     = UEFI_APPLICATION
+    ENTRY_POINT                     = ShellCEntryLib
+
+[Sources]
+    App.cpp
+
+[Packages]
+    MdePkg/MdePkg.dec
+    MdeModulePkg/MdeModulePkg.dec
+    ShellPkg/ShellPkg.dec
+
+[LibraryClasses]
+    UefiApplicationEntryPoint
+    UefiLib
+    UefiRuntimeServicesTableLib
+    SerialPortLib
+    ShellCEntryLib
+
+[Protocols]
+
+[Guids]
+    gEfiGlobalVariableGuid
