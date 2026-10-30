@@ -1,0 +1,40 @@
+[Defines]
+  INF_VERSION                     = 0x00010005
+  BASE_NAME                       = AodLoader
+  FILE_GUID                       = D4E01280-F228-40A2-9600-982CD65228DB
+  MODULE_TYPE                     = UEFI_APPLICATION
+  ENTRY_POINT                     = Main
+
+[Sources]
+  App.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+
+  ## ShellPkg/ShellPkg.dec
+
+[LibraryClasses]
+  BaseMemoryLib
+  DevicePathLib
+  MemoryAllocationLib
+  PrintLib
+  UefiApplicationEntryPoint
+  UefiBootServicesTableLib
+  UefiHiiServicesLib
+  UefiLib
+  UefiRuntimeServicesTableLib
+
+  ## UefiShellCommandLib
+  ## HandleParsingLib
+
+[Protocols]
+  gEfiLoadedImageProtocolGuid                   ## CONSUMES
+  gEfiFirmwareVolume2ProtocolGuid               ## CONSUMES
+  gEfiHiiDatabaseProtocolGuid                   ## CONSUMES
+  gEfiHiiPackageListProtocolGuid                ## CONSUMES
+  gEfiHiiConfigAccessProtocolGuid               ## CONSUMES
+  gEfiHiiConfigRoutingProtocolGuid              ## CONSUMES
+
+[Guids]
+  gZeroGuid                                     ## CONSUMES

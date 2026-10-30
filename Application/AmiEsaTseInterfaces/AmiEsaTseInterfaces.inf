@@ -1,0 +1,24 @@
+[Defines]
+  INF_VERSION                     = 0x00010005
+  BASE_NAME                       = AmiEsaTseInterfaces
+  FILE_GUID                       = AD4AF658-C462-4404-8075-F11524FFDA8F
+  MODULE_TYPE                     = UEFI_APPLICATION
+  ENTRY_POINT                     = Main
+
+[Sources]
+  Entry.cpp
+  EsaInterfacesForTseProtocol.hpp
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+
+[LibraryClasses]
+  UefiLib
+  UefiApplicationEntryPoint
+  UefiBootServicesTableLib
+  PrintLib
+
+[Protocols]
+
+[Guids]

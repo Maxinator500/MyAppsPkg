@@ -1,0 +1,27 @@
+[Defines]
+  INF_VERSION                     = 0x00010005
+  BASE_NAME                       = GetMemoryUintnApp
+  FILE_GUID                       = D245AE81-75BC-4780-8528-DC0C2F7CB167
+  MODULE_TYPE                     = UEFI_APPLICATION
+  ENTRY_POINT                     = ShellCEntryLib
+
+[Sources]
+  App.cpp
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  ShellPkg/ShellPkg.dec
+
+[LibraryClasses]
+  MemoryAllocationLib
+  SerialPortLib
+  ShellCEntryLib
+  UefiApplicationEntryPoint
+  UefiBootServicesTableLib
+  UefiLib
+  UefiRuntimeServicesTableLib
+
+[Protocols]
+
+[Guids]

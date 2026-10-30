@@ -1,0 +1,43 @@
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = MySuppressIfPatcher
+  FILE_GUID                      = F2B5C755-7CAE-42E8-9CD6-52E6496C11CB
+  MODULE_TYPE                    = UEFI_APPLICATION
+  ENTRY_POINT                    = Main
+
+[Sources]
+  ImageHandlesGather.c
+  PackageListsGather.c
+  Unsuppress.c
+  Entry.c
+
+[Packages]
+  ShellPkg/ShellPkg.dec
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  CryptoPkg/CryptoPkg.dec
+
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib
+  UefiHiiServicesLib
+  BaseLib
+  HiiLib
+  MemoryAllocationLib
+  BaseMemoryLib
+  DebugLib
+  PrintLib
+  UefiLib
+  DevicePathLib
+  FileHandleLib
+  SortLib
+  OrderedCollectionLib
+  PeCoffGetEntryPointLib
+  HandleParsingLib
+  UefiShellCommandLib
+
+[Protocols]
+  gEfiLoadedImageProtocolGuid
+
+[Guids]
+  gZeroGuid

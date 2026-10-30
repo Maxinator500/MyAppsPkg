@@ -1,0 +1,34 @@
+[Defines]
+  INF_VERSION                     = 0x00010005
+  BASE_NAME                       = SetupAppWithInput
+  FILE_GUID                       = 5474B27C-A272-4251-990A-E54DABF27488
+  MODULE_TYPE                     = UEFI_APPLICATION
+  ENTRY_POINT                     = ShellCEntryLib
+
+[Sources]
+  App.cpp
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  ShellPkg/ShellPkg.dec
+
+[LibraryClasses]
+  UefiLib
+  UefiApplicationEntryPoint
+  UefiBootServicesTableLib
+  UefiRuntimeServicesTableLib
+  UefiHiiServicesLib
+  PrintLib
+  MemoryAllocationLib
+  BaseMemoryLib
+  HiiLib
+  DebugLib
+  ShellCEntryLib
+
+[Protocols]
+  gEfiFormBrowser2ProtocolGuid
+  gEfiFirmwareVolume2ProtocolGuid
+
+[Guids]
+  gZeroGuid

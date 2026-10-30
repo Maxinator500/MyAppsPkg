@@ -1,0 +1,27 @@
+[Defines]
+  INF_VERSION                     = 0x00010005
+  BASE_NAME                       = AmiSetupVolatileDataSwitcher
+  FILE_GUID                       = 78526080-E977-497D-9F15-8DE284376872
+  MODULE_TYPE                     = UEFI_APPLICATION
+  ENTRY_POINT                     = ShellCEntryLib
+
+[Sources]
+  Entry.cpp
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  ShellPkg/ShellPkg.dec
+
+[LibraryClasses]
+  MemoryAllocationLib
+  SerialPortLib
+  ShellCEntryLib
+  UefiApplicationEntryPoint
+  UefiBootServicesTableLib
+  UefiLib
+  UefiRuntimeServicesTableLib
+
+[Protocols]
+
+[Guids]
