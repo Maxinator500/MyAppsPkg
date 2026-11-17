@@ -1,6 +1,6 @@
 [Defines]
   INF_VERSION                    = 0x00010005
-  BASE_NAME                      = MySuppressIfPatcher
+  BASE_NAME                      = MySuppressIfPatcherUPDATE1
   FILE_GUID                      = F2B5C755-7CAE-42E8-9CD6-52E6496C11CB
   MODULE_TYPE                    = UEFI_APPLICATION
   ENTRY_POINT                    = Main
@@ -34,7 +34,7 @@
   OrderedCollectionLib
   PeCoffGetEntryPointLib
   HandleParsingLib
-  UefiShellCommandLib
+  ShellCommandLib
 
 [Protocols]
   gEfiLoadedImageProtocolGuid

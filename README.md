@@ -14,7 +14,7 @@ The app is an attempt to utilize SMI command port from FADT table.
 
 # AodLoader
 Accepts no arguments.</br>
-An app created a day ago that searches for existing Aod handle. Then loads its HII resources.
+An app that searches for Aod DXE on formware volume, patches its buffer removing compatibility checks and then starts it.
 
 # GetMemoryUintn
 Accepts as much arguments as Shell command line limit or your memory allows.
