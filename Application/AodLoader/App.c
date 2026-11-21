@@ -324,9 +324,11 @@ ApplySimpleMask(
     return NULL;
   }
 
-  CHAR8 *tmp = AllocatePool(0x3);
-  CHAR8 *StringifiedHexDump = AllocateZeroPool(MAX_UINT8);
-  CHAR8 *Result = AllocateZeroPool(MaskLengthBytes * sizeof(UINT16));
+  UINTN MaskLengthChars = (MaskLengthBytes * sizeof(UINT16)) + AsciiStrSize('\0');
+  UINTN tmpSize = AsciiStrSize("XX");
+  CHAR8 *tmp = AllocatePool(tmpSize);
+  CHAR8 *StringifiedHexDump = AllocateZeroPool(MaskLengthChars);
+  CHAR8 *Result = AllocateZeroPool(MaskLengthChars);
   if (tmp == NULL || StringifiedHexDump == NULL || Result == NULL) {
     Print(L"Out of resources\n\r");
 
@@ -336,10 +338,10 @@ ApplySimpleMask(
   for (UINT16 i = 0; i < MaskLengthBytes; i++) //Get string from UINT buffer
   {
     AsciiSPrint(tmp, AsciiStrSize("XX"), "%02x", SourceBuffer[i]);
-    AsciiStrCatS(StringifiedHexDump, sizeof(StringifiedHexDump) + AsciiStrSize('\0'), tmp);
+    AsciiStrCatS(StringifiedHexDump, MaskLengthChars, tmp);
   }
 
-  for (UINTN i = 0; i < MaskLengthBytes * sizeof(UINT16); i++)
+  for (UINTN i = 0; i < MaskLengthChars - AsciiStrSize('\0'); i++)
   {
     if (MaskBuffer[i] == Metacharacter) //e.g. 0x2E is (CHAR8)'.'
     {

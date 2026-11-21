@@ -1,0 +1,34 @@
+[Defines]
+  INF_VERSION                     = 0x00010005
+  BASE_NAME                       = RouteConfigHookerAndLoader
+  FILE_GUID                       = CB8BA01E-1538-427A-ABC2-8112A6D6383E
+  MODULE_TYPE                     = UEFI_APPLICATION
+  ENTRY_POINT                     = ShellCEntryLib
+
+[Sources]
+  RouteConfigHookerAndLoader.h
+  Entry.c
+  Hook.nasm
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  ShellPkg/ShellPkg.dec
+
+[LibraryClasses]
+  ShellCEntryLib
+  MemoryAllocationLib
+  PrintLib
+  SerialPortLib
+  ShellLib
+  UefiApplicationEntryPoint
+  UefiBootServicesTableLib
+  UefiLib
+  UefiRuntimeServicesTableLib
+
+[Protocols]
+  gEfiLoadedImageProtocolGuid                   ## CONSUMES
+  gEfiHiiConfigRoutingProtocolGuid              ## CONSUMES
+
+[Guids]
+

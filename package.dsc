@@ -61,4 +61,6 @@
 
   MyAppsPkg/Application/ResetApp/ResetApp.inf
 
+  MyAppsPkg/Application/RouteConfigHookerAndLoader/RouteConfigHookerAndLoader.inf
+
   MyAppsPkg/Application/UEFIDirtyDumper/UEFIDirtyDumper.inf

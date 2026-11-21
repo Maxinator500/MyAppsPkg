@@ -14,7 +14,7 @@ The app is an attempt to utilize SMI command port from FADT table.
 
 # AodLoader
 Accepts no arguments.</br>
-An app that searches for Aod DXE on formware volume, patches its buffer removing compatibility checks and then starts it.
+An app that searches for Aod DXE on firmware volume, patches its buffer removing compatibility checks, and then starts it.
 
 # GetMemoryUintn
 Accepts as much arguments as Shell command line limit or your memory allows.
@@ -28,9 +28,13 @@ First it searches for HII handles, gets their parent EFI handles, then saves bot
 Accepts 1 optional argument.</br>
 Pass the line "OsIndications" as argument and ResetApp reboots to UEFI. Pass no argument and it reboots with nothing else.
 
+# RouteConfigHookerAndLoader
+Accepts 1 mandatory argument. The argument is efi app on FS storage, which loads Setup Utility (e.g. UMAF).</br>
+A copy of [RouteFixLoader](https://rog-forum.asus.com/t5/gaming-notebooks/scar-strix-advanced-bios/m-p/1155671/highlight/true#M15077), but with customizable loader name.
+
 # SetupApp
 Accepts 2 optional arguments. The 1st must be FormSet GUID, the 2nd must be FormId.</br>
-Basically "FormBrowser2->SendForm" in a wrapper. Sends the biggest package the app could find if the 2 arguments weren't provided.
+Basically "FormBrowser2->SendForm" in a wrapper. Sends the hardcoded values if the 2 arguments weren't provided.
 
 # UEFIDirtyDumper
 Accepts no arguments.</br>
